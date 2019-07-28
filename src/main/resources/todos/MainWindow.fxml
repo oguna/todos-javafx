@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="todos.MainWindowController"
+            prefHeight="400.0" prefWidth="600.0">
+    <top>
+        <ToolBar>
+            <Button onAction="#toggleAll">Toggle All</Button>
+            <TextField fx:id="textField" maxWidth="Infinity" HBox.hgrow="ALWAYS" onAction="#add" promptText="What needs to be done?"/>
+        </ToolBar>
+    </top>
+    <center>
+        <ListView fx:id="listView">
+        </ListView>
+    </center>
+    <bottom>
+        <ToolBar>
+            <Label fx:id="label" />
+            <Region HBox.hgrow="ALWAYS"/>
+            <ToggleButton fx:id="allToggleButton">All</ToggleButton>
+            <ToggleButton fx:id="activeToggleButton">Active</ToggleButton>
+            <ToggleButton fx:id="completedToggleButton">Completed</ToggleButton>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button fx:id="clearCompletedButton" onAction="#clearCompleted">Clear completed</Button>
+        </ToolBar>
+    </bottom>
+</BorderPane>
